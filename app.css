@@ -1,0 +1,273 @@
+:root {
+    --vee3-theme-color-rgb: 0, 122, 255;
+    --vee3-theme-color-shade: #0066d6;
+    --vee3-theme-color-tint: #298fff;
+    --vee3-safe-area-left: 0px;
+    --vee3-safe-area-right: 0px;
+    --vee3-safe-area-top: 0px;
+    --vee3-safe-area-bottom: 0px;
+    --vee3-safe-area-outer-left: 0px;
+    --vee3-safe-area-outer-right: 0px;
+    --vee3-device-pixel-ratio: 1
+}
+
+:root {
+    --vee3-font-family: Roboto, system-ui, Noto, Helvetica, Arial, sans-serif;
+    --vee3-font-size: 14px;
+    --vee3-line-height: 1.5;
+    --vee3-text-color: #212121;
+    --vee3-border-color: transparent;
+}
+
+:root {
+    --vee3-navbar-title-height: 56px;
+    --vee3-navbar-title-font-size: 20px;
+    --vee3-navbar-title-text-align: center;
+}
+
+:root {
+    --vee3-card-margin-horizontal: 16px;
+    --vee3-card-margin-vertical: 16px;
+    --vee3-card-content-padding-horizontal: 16px;
+    --vee3-card-content-padding-vertical: 16px;
+    --vee3-card-border-radius: 4px;
+    --vee3-card-font-size: inherit;
+    --vee3-card-header-text-color: inherit;
+    --vee3-card-header-font-weight: 400;
+    --vee3-card-header-padding-horizontal: 16px;
+    --vee3-card-footer-font-weight: 400;
+    --vee3-card-footer-font-size: inherit;
+    --vee3-card-footer-padding-horizontal: 16px;
+    --vee3-card-expandable-font-size: 16px;
+    --vee3-card-expandable-tablet-width: 670px;
+    --vee3-card-expandable-tablet-height: 670px;
+    --vee3-card-bg-color: #fff;
+    --vee3-card-outline-border-color: rgba(0, 0, 0, 0.12);
+    --vee3-card-header-border-color: rgba(0, 0, 0, 0.1);
+    --vee3-card-footer-border-color: rgba(0, 0, 0, 0.1);
+    --vee3-card-expandable-bg-color: #fff;
+}
+
+html,
+body {
+    overflow: hidden;
+    position: fixed;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background: #fff;
+    /* overflow: hidden; */
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    font-family: var(--vee3-font-family);
+    font-size: var(--vee3-font-size);
+    line-height: var(--vee3-line-height);
+    color: var(--vee3-text-color);
+}
+
+html,
+body {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    /* overflow-x: hidden; */
+}
+
+.root {
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.root,
+body,
+html {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.view,
+.views {
+    position: relative;
+    height: 100%;
+    z-index: 5000;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.page {
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transform: none;
+    background-color: var(--f7-page-bg-color);
+    z-index: 1;
+    overflow-y: scroll;
+}
+
+.page-content {
+    margin-top: 56px;
+}
+
+.navbar {
+    position: fixed;
+    height: 56px;
+    width: 100%;
+    z-index: 1;
+    /* position: relative; */
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    box-sizing: border-box;
+    margin: 0;
+    height: 58px;
+    color: var(--f7-navbar-text-color, var(--f7-bars-text-color));
+    font-size: var(--f7-navbar-font-size);
+    border-bottom: 1px solid black;
+}
+
+.navbar-inner {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    padding: var(--f7-safe-area-top) calc(var(--f7-navbar-inner-padding-right) + var(--f7-safe-area-right)) 0 calc(var(--f7-navbar-inner-padding-left) + var(--f7-safe-area-left));
+    transform: translate3d(0, 0, 0);
+    z-index: 10;
+}
+
+.navbar-bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    background: #ffffff;
+    transition-property: transform;
+}
+
+.md .navbar-inner {
+    justify-content: flex-start;
+    overflow: hidden;
+}
+
+.navbar-inner {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    padding: var(--f7-safe-area-top) calc(var(--f7-navbar-inner-padding-right) + var(--f7-safe-area-right)) 0 calc(var(--f7-navbar-inner-padding-left) + var(--f7-safe-area-left));
+    transform: translate3d(0, 0, 0);
+    z-index: 10;
+}
+
+.navbar .title {
+    flex-grow: 1;
+    position: relative;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    flex-shrink: 10;
+    font-weight: var(--f7-navbar-title-font-weight);
+    display: inline-block;
+    line-height: 24px;
+    text-align: var(--vee3-navbar-title-text-align);
+    font-size: var(--vee3-navbar-title-font-size);
+    margin-left: var(--f7-navbar-title-margin-left);
+    margin-right: var(--f7-navbar-title-margin-left);
+}
+
+.icon-list ul {
+    margin-block-start: 0;
+    padding-inline-start: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.icon-list ul li {
+    display: inline-block;
+    /* border: 1px solid red; */
+    height: 160px;
+    width: 64px;
+    margin: 5px;
+    min-width: 100px;
+    min-height: 100px;
+    border-radius: 5px;
+}
+
+.card {
+    overflow: hidden;
+    height: 100%;
+    background: var(--vee3-card-bg-color);
+    position: relative;
+    border-radius: var(--vee3-card-border-radius);
+    font-size: var(--vee3-card-font-size);
+    /* margin-top: var(--vee3-card-margin-vertical);
+    margin-bottom: var(--vee3-card-margin-vertical);
+    margin-left: calc(var(--vee3-card-margin-horizontal) + var(--vee3-safe-area-left));
+    margin-right: calc(var(--vee3-card-margin-horizontal) + var(--vee3-safe-area-right)); */
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+}
+
+.card .card-header {
+    height: 20vw;
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+}
+
+.card .card-content {
+    font-size: 12px;
+    background-color: #157ff3;
+    padding: 5px;
+}
+
+.card .card-footer {
+    font-size: 6px;
+    background: #157ff3;
+    flex-grow: 1;
+    padding: 5px;
+}
+
+.input-wrapper {
+    border: 1px solid #dfe1e5;
+    box-shadow: none;
+    border-radius: 24px;
+}
+
+.input-wrapper input {
+    border-radius: 24px;
+}
+
+input {
+    outline: 0;
+}
+
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+.vee3-text-highlight {
+    color: rgb(6, 182, 212);
+}
+
+#loadOverlay{display: none;}

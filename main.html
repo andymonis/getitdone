@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" class="text-gray-500 antialiased bg-white">
+
+<head></head>
+
+<body class="overflow-y-scroll">
+    <div id="loadOverlay" style="background-color:#fff; position:absolute; top:0px; left:0px; width:100%; height:100%; z-index:2000;"></div>
+    <!-- 
+        Home 
+    -->
+    <section class="relative z-10 text-center max-w-screen-lg xl:max-w-screen-xl mx-auto">
+        <div class="px-4">
+            <svg class="w-24 h-12" viewBox="0 0 192 37 " version="1.1 " xmlns="http://www.w3.org/2000/svg " xmlns:xlink="http://www.w3.org/1999/xlink " xml:space="preserve " xmlns:serif="http://www.serif.com/ " style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2; ">
+                <g transform="matrix(1,0,0,1,-642.757,-850.791) ">
+                    <g>
+                        <text x="642.122px " y="886.582px " style="font-family: 'ArialMT', 'Arial', sans-serif;font-size:50px;fill:rgb(6, 182, 212); ">vee</text>
+                        <text x="722.737px " y="886.582px " style="font-family: 'ArialMT', 'Arial', sans-serif;font-size:50px; ">three</text>
+                    </g>
+                </g>
+            </svg>
+        </div>
+        <button data-bind="click:$root.save" class="flex-grow">save</button>
+        <button data-bind="click:$root.load" class="flex-grow">load</button>
+    </section>
+    <section class="relative z-10 text-center max-w-screen-lg xl:max-w-screen-xl mx-auto">
+        <div class="px-4">
+            <h1 data-bind="text:$data.name"></h1>
+        </div>
+    </section>
+    <!-- todo -->
+    <section class="relative z-10 bg-gray-100 my-2 py-2 text-center text-base max-w-screen-lg xl:max-w-screen-xl mx-auto">
+        <div class="px-4 flex">
+            <h1 class="flex-grow text-left text-red-500">todo</h1>
+            <button data-bind="click:$root.new_todo" class="flex-grow">+</button>
+        </div>
+        <div class="px-4">
+            <!-- List Component-->
+            <div data-bind="foreach:$data.todo.cards">
+                <!-- Card Component -->
+                <div class="card mt-2 p-2">
+                    <div class="text-right">
+                        <button data-bind="click:$root.demote" class="h-12 w-12">x</button>
+                        <button data-bind="click:$root.promote" class="h-12 w-12">&gt;</button>
+                    </div>
+                    <textarea data-bind="textInput:$data.desc"></textarea>
+                </div>
+                <!-- Card Component -->
+            </div>
+            <!-- /List Component-->
+        </div>
+    </section>
+    <!-- doing -->
+    <section class="relative z-10 bg-gray-100 my-2 py-2 text-center text-base max-w-screen-lg xl:max-w-screen-xl mx-auto">
+        <div class="px-4 flex">
+            <h1 class="flex-grow text-left text-yellow-500">doing</h1>
+            <button data-bind="click:()=>{}" class="flex-grow"></button>
+        </div>
+        <div class="px-4">
+            <!-- List Component-->
+            <div data-bind="foreach:$data.doing.cards">
+                <!-- Card Component -->
+                <div class="card mt-2 p-2">
+                    <div class="text-right">
+                        <button data-bind="click:$root.demote" class="h-12 w-12">&lt;</button>
+                        <button data-bind="click:$root.promote" class="h-12 w-12">&gt;</button>
+                    </div>
+                    <textarea data-bind="textInput:$data.desc"></textarea>
+                </div>
+                <!-- Card Component -->
+            </div>
+            <!-- /List Component-->
+        </div>
+    </section>
+    <!-- done -->
+    <section class="relative z-10 bg-gray-100 my-2 py-2 text-center text-base max-w-screen-lg xl:max-w-screen-xl mx-auto">
+        <div class="px-4 flex">
+            <h1 class="flex-grow text-left text-green-500">done</h1>
+            <button data-bind="click:()=>{}" class="flex-grow"></button>
+        </div>
+        <div class="px-4">
+            <!-- List Component-->
+            <div data-bind="foreach:$data.done.cards">
+                <!-- Card Component -->
+                <div class="card mt-2 p-2">
+                    <div class="text-right">
+                        <button data-bind="click:$root.demote" class="h-12 w-12">&lt;</button>
+                        <button data-bind="click:$root.promote" class="h-12 w-12">&#33;</button>
+                    </div>
+                    <textarea data-bind="textInput:$data.desc"></textarea>
+                </div>
+                <!-- Card Component -->
+            </div>
+            <!-- /List Component-->
+        </div>
+    </section>
+
+
+</body>
+
+</html>

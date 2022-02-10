@@ -1,0 +1,34 @@
+{
+    "name": "Default",
+    "version": "1.0.13",
+    "description": "The Vee3 default app that should load if no app is specified. This is in effect the launch pad (store?) for all other apps.",
+    "main": "index.js",
+    "app": {
+        "manifest": {
+            "// service_worker": "network_or_cache",
+            "// ": "probably don't want this to be cached and only online i.e. not pinnable"
+        },
+        "frameworks": [
+            "knockout",
+            "tailwindcss"
+        ]
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "commit": "git add . && git commit -m 'Checking in latest' && git push",
+        "tag": "npm --no-git-tag-version version patch && npm run commit",
+        "tailwind-build": "npx tailwindcss ../../v3/node_modules/tailwindcss/tailwind.css -o ./tailwind.css --purge './main.html'",
+        "sass-build": "npx sass main.scss main.css -s compressed",
+        "build-css": "npm run tailwind-build && npm run sass-build"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/andymonis/default.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/andymonis/hello_world/issues"
+    },
+    "homepage": "https://github.com/andymonis/hello_world#readme"
+}
